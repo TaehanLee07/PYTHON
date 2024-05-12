@@ -55,3 +55,34 @@ print(x.values())  # dict_values([10, 20, 30, 40]) 출력
 keys = ['a', 'b', 'c', 'd']
 x = dict.fromkeys(keys)  # 키 리스트로 딕셔너리 생성
 print(x)  # {'a': None, 'b': None, 'c': None, 'd': None} 출력
+
+# 2-1 반복문으로 딕셔너리의 키-값 쌍을 모두 출력하기
+# 딕셔너리 와 for 문을 사용하여 간단히 모든 키-값 쌍을 출력해보자
+# 예시
+f = {'a': 1, 'b': 2, 'c': 3, 'd': 4}
+for i in f:
+    print(i, end=' ') # a b c d 출력
+
+# 값은 출력되지 않고 키만 출력됩니다. 그럼 키와 값을 모두 출력하려면 어떻게 해야하나 그럴떄는 이때는 for in 뒤에 딕셔너리를 지정하고 items를 사용해야 합니다.
+# 예시
+f = {'a': 1, 'b': 2, 'c': 3, 'd': 4}
+for key, value in f.items():
+    print(key + ' :', value)
+# 출력
+# a : 1
+# b : 2
+# c : 3
+# d : 4
+
+# 2-2 딕셔너리의 키값만 출력하기
+# 지금까지 items로 키와 값을 함께 가져왔는데, 키만 가져오거나 값만 가져오면서 반복할 수도 있습니다.
+# items: 키-값 쌍을 모두 가져옴
+# keys: 키를 모두 가져옴
+# values: 값을 모두 가져옴
+# 예시
+# 키만 가져오기
+for key in f.keys():
+    print(key, end=' ') # a b c d 출력
+# 값만 가져오기
+for value in f.values():
+    print(value, end=' ') # 1 2 3 4 출력
