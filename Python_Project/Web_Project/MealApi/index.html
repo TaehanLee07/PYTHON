@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>성일정보고 급식</title>
+</head>
+<body>
+    <h1>성일정보고 급식</h1>
+    <form method="post">
+        <label for="date">날짜 선택:</label>
+        <input type="date" id="date" name="date">
+        <button type="submit">조회</button>
+    </form>
+    <hr>
+    <h2>급식 정보</h2>
+    <pre>{{ meal }}</pre>
+</body>
+</html>
