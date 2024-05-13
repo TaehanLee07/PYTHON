@@ -4,5 +4,5 @@
   
 from itertools import combinations
 
-arr = ['A', 'B', 'C']
+food = ['A', 'B', 'C']
 print(list(combinations(arr, 2))) # [('A', 'B'), ('A', 'C'), ('B', 'C')]
