@@ -13,3 +13,5 @@ it.__next__() # 3 출력
 it.__next__() # 에러 발생
 
 #  리스트뿐만 아니라 문자열, 딕셔너리, 세트도 __iter__를 호출하면 이터레이터가 나옵니다.
+'Hello, world!'.__iter__()
+<str_iterator object at 0x03616770>
