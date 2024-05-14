@@ -51,3 +51,5 @@ class Counter:
 for i in Counter(3):
     print(i, end=' ') # 0 1 2 출력
 # 이터레이터를 만들 때는 __init__ 메서드에서 초깃값, __next__ 메서드에서 조건식과 현재값 부분을 주의해야 합니다. 
+
+# 1-3 이터레이터 언패킹
