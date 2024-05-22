@@ -125,12 +125,17 @@ class GambleBot(discord.Client):
             user = self.get_user(int(user_id))
             if user:
                 await user.send(
-                    f'빚으로 인해 {penalty_amount:,.0f} 루블이 차감되었습니다. 현재 잔액은 {self.user_balances[user_id]:,} 루블입니다. 조심하세요!')
+                    f'빚으로 인해 {penalty_amount:,.0f} 루블이 차감되었습니다. 현재 잔액은 {self.user_balances[user_id]:,.0f} 루블입니다. 조심하세요!')
+            else:
+                print(f"사용자 {user_id}에 대한 정보를 찾을 수 없습니다.")
 
             if self.user_balances[user_id] >= loan_amount * 2:
                 self.user_balances[user_id] -= loan_amount * 2
                 self.loan_amounts[user_id] = 0
-                await user.send(f'빚을 모두 갚으셨습니다. 남은 잔액은 {self.user_balances[user_id]:,} 루블입니다.')
+                if user:
+                    await user.send(f'빚을 모두 갚으셨습니다. 남은 잔액은 {self.user_balances[user_id]:,.0f} 루블입니다.')
+                else:
+                    print(f"사용자 {user_id}에 대한 정보를 찾을 수 없습니다.")
 
             self.save_data()
 
